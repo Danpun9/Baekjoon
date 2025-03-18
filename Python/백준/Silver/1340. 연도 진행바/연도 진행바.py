@@ -33,15 +33,15 @@ def isLeapYear(y):
     return False
 
 
-str = input().split()
+cmd = input().split()
 
-mm = month[str[0]]  # 월
+mm = month[cmd[0]]  # 월
 
-dd = int(str[1][:-1])  # 일
+dd = int(cmd[1][:-1])  # 일
 
-yyyy = int(str[2])  # 연도
+yyyy = int(cmd[2])  # 연도
 
-HH, MM = map(int, str[3].split(":"))  # 시간
+HH, MM = map(int, cmd[3].split(":"))  # 시간
 
 # 윤년이면 2월을 29로 변경
 if isLeapYear(yyyy):
@@ -54,4 +54,4 @@ total = sum(day) * 24 * 60
 curr = ((sum(day[:mm]) + dd - 1) * 24 * 60) + (HH * 60) + MM
 
 # 백분율 계산
-print(curr / total * 100)
+stdout.write(str(curr / total * 100))
