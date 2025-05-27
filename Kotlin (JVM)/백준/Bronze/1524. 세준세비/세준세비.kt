@@ -13,11 +13,14 @@ fun main() {
     br.readLine()
     br.readLine()
 
-    val sejun = br.readLine().split(" ").map { it.toInt() }.sorted().toIntArray()
-    val sebi = br.readLine().split(" ").map { it.toInt() }.sorted().toIntArray()
+    var sejun = -1
+    var sebin = -1
+
+    br.readLine().split(" ").map { sejun = maxOf(sejun, it.toInt()) }
+    br.readLine().split(" ").map { sebin = maxOf(sebin, it.toInt()) }
 
     bw.write(
-      if (sejun[sejun.size - 1] >= sebi[sebi.size - 1]) "S\n"
+      if (sejun >= sebin) "S\n"
       else "B\n"
     )
   }
