@@ -7,12 +7,9 @@ fun main() {
   val br = BufferedReader(InputStreamReader(System.`in`))
   val bw = BufferedWriter(OutputStreamWriter(System.`out`))
 
-
   repeat(br.readLine().toInt()) {
-    val (a, b) = br.readLine().split(" ").map { it.toInt() }
-
-    if (b == 0 && a % 2 != 0) bw.write("no\n")
-    else bw.write("yes\n")
+    br.readLine()
+    bw.write("yes\n")
   }
 
   bw.close()
